@@ -1,0 +1,205 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mixin;
+@use "sass:math";
+
+// Hero section
+.hero {
+  position: relative;
+  max-width: 100%;
+  min-height: calc(100vh + 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.95);
+  text-align: center;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 93%);
+  margin-bottom: -5vw;
+  padding-bottom: 5vw;
+  padding-top: math.div(var.$gutter-base, 0.38);
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url("../img/Section1.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  &__wrap {
+    @extend %wrap;
+    position: relative;
+    width: 100%;
+    padding: 0;
+  }
+
+  &__content-box {
+    background-color: var.$color-dark-grey;
+    padding: math.div(var.$gutter-base, 0.55) math.div(var.$gutter-base, 0.58)
+      math.div(var.$gutter-base, 0.6);
+    border-radius: 2rem;
+    max-width: 51.875rem;
+    min-height: 24.375rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__logo {
+    width: 4.15rem;
+    margin-bottom: math.div(var.$gutter-base, 1.5);
+  }
+
+  &__heading {
+    font-family: var.$font-family-heading;
+    font-size: var.$heading-size-bigger;
+    font-weight: var.$font-weight-bold;
+    color: var.$color-white;
+    line-height: var.$line-height-small;
+    text-transform: uppercase;
+    margin-bottom: 2.2rem;
+  }
+
+  &__text {
+    font-family: var.$font-family-base;
+    font-size: var.$font-size-base;
+    color: var.$color-white;
+    line-height: var.$line-height-base;
+    max-width: 90%;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-button {
+    background-color: var.$color-button-bg;
+    color: var.$color-button-text;
+    font-family: var.$font-family-base;
+    font-size: var.$font-size-medium;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out,
+      color 0.3s ease-in-out;
+    margin-bottom: 0;
+    width: auto;
+    display: block;
+
+    &:hover {
+      background-color: var.$color-black;
+      color: var.$color-white;
+      transform: rotate(5deg);
+      text-decoration: none;
+    }
+  }
+}
+
+// Laptop 1024px and up
+@include mixin.laptop-m-styles {
+  .hero {
+    padding-bottom: 12vw;
+
+    &__content-box {
+      width: 62.5%;
+      margin-top: math.div(var.$gutter-base, 0.4);
+      padding-inline: 0;
+      padding-bottom: 5vw;
+    }
+
+    &__logo {
+      width: 8%;
+    }
+
+    &__heading {
+      font-size: var.$heading-size-big;
+    }
+
+    &__text {
+      width: 77.5%;
+    }
+
+    &__button {
+      width: 40%;
+      font-size: var.$font-size-medium;
+      padding: 0.5rem 1rem;
+    }
+  }
+}
+
+// Tablet 768px–1023px
+@include mixin.tablet-styles {
+  .hero {
+    min-height: calc(100vh + 11.75rem);
+    padding-top: 4vw;
+
+    &__content-box {
+      max-width: 100%;
+      min-width: 85%;
+      margin-top: math.div(var.$gutter-base, 0.5);
+    }
+
+    &__logo {
+      width: 8%;
+    }
+
+    &__heading {
+      font-size: var.$heading-size-big;
+    }
+
+    &__text {
+      width: 77.5%;
+    }
+
+    &__button {
+      width: auto;
+      font-size: var.$font-size-medium;
+      padding: 0.5rem 1rem;
+    }
+  }
+}
+
+// Mobile max 425px
+@include mixin.mobile-l-styles {
+  .hero {
+    min-height: 100vh;
+    padding-top: 7vw;
+    clip-path: polygon(0 0, 100% 0, 100% 99%, 0 89%);
+
+    &__overlay {
+      background-position: center top;
+    }
+
+    &__content-box {
+      padding: 0;
+      background-color: transparent;
+      max-width: 100%;
+      margin-top: math.div(var.$gutter-base, 1.5);
+    }
+
+    &__logo {
+      width: 16%;
+    }
+
+    &__heading {
+      font-size: var.$heading-size-tiny;
+      line-height: var.$line-height-mobile;
+    }
+
+    &__text {
+      font-size: var.$font-size-small;
+      width: 87.5%;
+    }
+
+    #heroButton {
+      width: auto;
+      font-size: var.$font-size-base;
+      padding: 0.5rem 1.5rem;
+    }
+  }
+}

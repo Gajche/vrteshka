@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Information Form</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.0 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="./form/formstyle.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container form-container">
+        <div class="form-header-image mb-3 rounded"></div>
+
+        <form id="volunteerForm" action="#" method="POST" novalidate>
+            <div class="form-card form-card--top-border mb-3 p-4 d-flex flex-column justify-content-center rounded">
+                <h1 class="mb-3 fw-bold text-left text-uppercase">ПОЗДРАВ ВИА ВОЛОНТЕРИ!</h1>
+                <p class="mb-3">ВИА е проект кој вклучува повеќедневна уметничка резиденција и ревијална програма.
+                    Настанот се случува на 1090 метри надморска висина на планината Плачковица.</p>
+                <p class="mb-0">Датум 2025та : 25.08 - 01.09</p>
+                <hr class="hr border-1 mb-2">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <label for="emailPrimary" class="form-label form-label-sm me-2 mt-0">Email</label>
+                        <input type="email" class="form-control form-control-xl border-1 border-bottom"
+                            id="emailPrimary" name="emailPrimary" placeholder="Your email" autocomplete="email"
+                            required>
+                        <div class="invalid-feedback" id="emailPrimaryError"></div>
+                    </div>
+                    <a href="#">Switch account</a>
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        class="bi bi-cloud-check" viewBox="0 0 16 16" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                            d="M10.354 6.354a.5.5 0 0 0-.708-.708l-3 3a.5.5 0 0 0 .708.708l2.646-2.647.646.648a.5.5 0 0 0 .708 0l.5-.5a.5.5 0 0 0 0-.708z">
+                            <path
+                                d="M4.406 3.182A.5.5 0 0 1 4.857 3h6.286a.5.5 0 0 1 .451.182C11.518 3.667 12 4.276 12 4.888a4 4 0 0 1-4 4h-1.26l.32-.39a.5.5 0 0 1 .708-.708l.4-.31a.5.5 0 0 1 .708.708l-.31.4c.139.382.207.783.207 1.197a5 5 0 0 1-5 5v-.556a.5.5 0 0 1 .216-.435c.179-.087.362-.13.548-.13a3 3 0 0 0 0-6h-.002a4.5 4.5 0 0 1-.216-.957">
+                    </svg> -->
+                </div>
+                <hr class="hr border-1 mt-3">
+                <p class="mt-0"><small class="text-danger">* Indicates required question</small></p>
+            </div>
+
+            <div class="form-card mb-3 p-4 rounded">
+                <label for="emailConfirm" class="form-label mb-2">Email <span class="text-danger">*</span></label>
+                <input type="email" class="form-control border-0 border-bottom" id="emailConfirm" name="emailConfirm"
+                    placeholder="Your email" required>
+                <div class="invalid-feedback" id="emailConfirmError"></div>
+                <p class="mt-3"><small class="text-danger">* This is a required question</small></p>
+            </div>
+
+            <div class="card form-card mb-3 p-4 rounded">
+                <label for="fullName" class="form-label mb-2">Име и презиме <span class="text-danger">*</span></label>
+                <input type="text" class="form-control border-0 border-bottom" id="fullName" name="fullName"
+                    placeholder="Name" autocomplete="name" required>
+                <div class="invalid-feedback" id="fullNameError"></div>
+            </div>
+
+            <div class="card form-card mb-3 p-4 rounded">
+                <label for="contactPhone" class="form-label mb-2">Контакт телефон <span
+                        class="text-danger">*</span></label>
+                <input type="tel" class="form-control border-0 border-bottom" id="contactPhone" name="contactPhone"
+                    placeholder="Contact" autocomplete="tel" required>
+                <div class="invalid-feedback" id="contactPhoneError"></div>
+            </div>
+
+            <div class="card form-card mb-3 p-4 rounded">
+                <label for="age" class="form-label mb-2">Возраст</label>
+                <input type="text" class="form-control border-0 border-bottom" id="age" name="age" placeholder="Age">
+                <div class="invalid-feedback" id="ageError"></div>
+            </div>
+
+            <div class="card form-card mb-3 p-4 rounded">
+                <label for="education" class="form-label mb-2">Образование/Професија</label>
+                <input type="text" class="form-control border-0 border-bottom" id="education" name="education"
+                    placeholder="Your answer">
+            </div>
+
+            <div class="card form-card mb-3 p-4 rounded">
+                <label class="form-label mb-2">Имате ли претходно искуство во волонтирање? <span
+                        class="text-danger">*</span></label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="volunteerExperience" id="volunteerYes"
+                        value="да">
+                    <label class="form-check-label" for="volunteerYes">да</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="volunteerExperience" id="volunteerNo" value="не">
+                    <label class="form-check-label" for="volunteerNo">не</label>
+                </div>
+                <div class="invalid-feedback" id="volunteerExperienceError"></div>
+            </div>
+
+            <div class="card form-card mb-3 p-4 rounded">
+                <label for="volunteerDetails" class="form-label mb-2">Ако на претходното прашање одговоривте со „да“,
+                    опишете ги вашите претходни искуства</label>
+                <textarea class="form-control border-0 border-bottom" id="volunteerDetails" name="volunteerDetails"
+                    rows="3" placeholder="Your answer"></textarea>
+                <div class="invalid-feedback" id="volunteerDetailsError"></div>
+            </div>
+
+            <div class="card form-card mb-3 p-4 rounded">
+                <label for="activities" class="form-label mb-2">Какви активности и задачи би сакале да ги извршувате
+                    како волонтер?</label>
+                <textarea class="form-control border-0 border-bottom" id="activities" name="activities" rows="3"
+                    placeholder="Your answer"></textarea>
+            </div>
+
+            <div class="card form-card mb-3 p-4 rounded">
+                <label for="motivation" class="form-label mb-2">Зошто сакате да волонтирате токму на оваа културна
+                    резиденција?</label>
+                <textarea class="form-control border-0 border-bottom" id="motivation" name="motivation" rows="3"
+                    placeholder="Your answer"></textarea>
+            </div>
+
+            <div class="form-actions-and-footer px-0 mb-3">
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary border-0">Submit</button>
+                    <button type="reset" class="btn btn-secondary border-0">Clear form</button>
+                </div>
+                <p class="form-footer-text">Never submit passwords through Google Forms.</p>
+            </div>
+        </form>
+
+        <div class="google-forms-attribution d-flex align-items-center gap-1">
+            <svg focusable="false" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <path
+                    d="M20.4,3.9H3.6C3.2,3.9,2.9,4.2,2.9,4.6v14.7c0,0.4,0.3,0.7,0.7,0.7h16.7c0.4,0,0.7-0.3,0.7-0.7V4.6 C21.1,4.2,20.8,3.9,20.4,3.9z M10.3,17.6H7.7V9.1h2.6V17.6z M16.2,17.6h-2.6v-4.9c0-1.2-0.4-2-1.5-2c-0.8,0-1.3,0.5-1.5,1 c-0.1,0.2-0.1,0.4-0.1,0.6v5.2H7.9c0,0,0-7.6,0-8.4h2.6v1.2c0.4-0.6,1-1.4,2.3-1.4c1.7,0,3,1.1,3,3.5L16.2,17.6L16.2,17.6z">
+                    <path d="M9,7.6c-1,0-1.7-0.8-1.7-1.7s0.8-1.7,1.7-1.7s1.7,0.8,1.7,1.7S10,7.6,9,7.6z"></path>
+            </svg>
+            <span>Forms</span>
+        </div>
+        <p class="form-footer-text">
+            This content is neither created nor endorsed by Google.
+            <a href="#" class="switch-account-link" style="font-size:11px;">Report Abuse</a> -
+            <a href="#" class="switch-account-link" style="font-size:11px;">Terms of Service</a> -
+            <a href="#" class="switch-account-link" style="font-size:11px;">Privacy Policy</a>
+        </p>
+    </div>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <!-- JS Validation -->
+    <script src="./form/formvalidation.js"></script>
+
+
+</body>
+
+</html>

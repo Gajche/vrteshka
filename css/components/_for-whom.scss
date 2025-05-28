@@ -1,0 +1,311 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mixin;
+@use "sass:math";
+
+// button
+@keyframes glide-bump-stay {
+  0% {
+    transform: scale(1);
+    color: var.$color-button-text;
+    background-color: var.$color-button-bg;
+  }
+  25% {
+    transform: scale(1.2);
+    color: var.$color-white;
+    background-color: var.$color-black;
+  }
+  50% {
+    transform: scale(1);
+    color: var.$color-button-text;
+    background-color: var.$color-button-bg;
+  }
+  75% {
+    transform: scale(1.2);
+    color: var.$color-white;
+    background-color: var.$color-black;
+  }
+  100% {
+    transform: scale(1.2);
+    color: var.$color-white;
+    background-color: var.$color-black;
+  }
+}
+
+// section for whom
+.artists {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../img/Section_3_Background.jpg");
+  background-size: cover;
+  background-position: 50% 72%;
+  clip-path: polygon(0 0%, 100% 11%, 100% 100%, 0 100%);
+
+  transition: background-position 0.4s ease-in-out;
+  will-change: background-position;
+  backface-visibility: hidden;
+
+  margin-top: -7vw;
+  padding-top: 9vw;
+  padding-bottom: 8vw;
+
+  &__content-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  &__title {
+    text-align: center;
+    font-family: var.$font-family-heading;
+    font-size: var.$heading-size-big;
+    margin-bottom: var.$gutter-base;
+    letter-spacing: var.$font-letter-spacing;
+  }
+
+  &__description {
+    font-family: var.$font-family-base;
+    font-size: var.$font-size-base;
+    line-height: var.$line-height-base;
+    margin-bottom: math.div(var.$gutter-base, 0.5);
+    max-width: 100%;
+    width: 52.5%;
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .border-top {
+    width: 30%;
+  }
+
+  #artistCarousel {
+    position: relative;
+    cursor: grab;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    scroll-behavior: smooth;
+
+    &.dragging {
+      cursor: grabbing;
+      user-select: none;
+    }
+
+    .carousel-item {
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      text-align: center;
+      flex: 0 0 auto;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: auto;
+      padding: 0 0.75rem;
+    }
+
+    .carousel-control-prev {
+      left: 0.25rem;
+    }
+
+    .carousel-control-next {
+      right: 0.25rem;
+    }
+  }
+
+  &__artist-name {
+    font-family: var.$font-family-base;
+    font-size: var.$heading-size-small;
+    font-weight: var.$font-weight-medium;
+    margin: math.div(var.$gutter-base, 0.75) 0 math.div(var.$gutter-base, 3) 0;
+  }
+
+  &__artist-subtitle {
+    font-family: var.$font-family-base;
+    font-size: var.$font-size-base;
+    margin: 0 0 math.div(var.$gutter-base, 0.75) 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  &__artists-button {
+    background-color: var.$color-button-bg;
+    color: var.$color-button-text;
+    font-family: var.$font-family-base;
+    font-size: var.$font-size-medium;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: background-color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    margin: math.div(var.$gutter-base, 0.6) auto 0;
+    width: fit-content;
+    display: block;
+    text-align: center;
+
+    &:hover {
+      background-color: var.$color-black;
+      color: var.$color-white;
+      animation: glide-bump-stay 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+        forwards;
+    }
+
+    &:not(:hover) {
+      transform: scale(1);
+      color: var.$color-button-text;
+      background-color: var.$color-button-bg;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        background-color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+  }
+
+  // Laptop 1024px
+  @include mixin.laptop-m-styles {
+    margin-top: -14vw;
+    padding-top: 12vw;
+    padding-bottom: 12vw;
+    background-size: 150%;
+    background-position: 45% 72%;
+
+    .border-top {
+      width: 50%;
+    }
+
+    &__title {
+      font-size: var.$heading-size-medium;
+      letter-spacing: 0;
+    }
+
+    &__description {
+      width: 75%;
+      font-family: var.$font-family-base;
+    }
+
+    &__carousel-separator {
+      width: 52.5%;
+    }
+  }
+
+  // Tablet 768px
+  @include mixin.tablet-styles {
+    margin-top: -14vw;
+    padding-top: 14vw;
+    padding-bottom: 14vw;
+    background-size: 200%;
+    background-position: 48% 71%;
+    background-repeat: no-repeat;
+
+    .border-top {
+      width: 50%;
+    }
+
+    &__title {
+      font-size: var.$heading-size-medium;
+      margin-bottom: math.div(var.$gutter-base, 1);
+    }
+
+    &__description {
+      font-size: var.$font-size-base;
+      width: 75%;
+    }
+
+    &__carousel-separator {
+      width: 50%;
+    }
+
+    &__artist-name {
+      font-size: var.$heading-size-small;
+      margin-top: math.div(var.$gutter-base, 0.65);
+      margin-bottom: math.div(var.$gutter-base, 8);
+    }
+
+    &__artist-subtitle {
+      font-size: var.$font-size-small;
+      margin-bottom: math.div(var.$gutter-base, 0.65);
+    }
+
+    &__artist-text {
+      font-size: var.$font-size-small;
+      line-height: var.$line-height-small;
+      width: 100%;
+    }
+
+    &__artists-button {
+      font-size: var.$font-size-base;
+      margin-top: math.div(var.$gutter-base, 0.65);
+    }
+  }
+
+  // Mobile 425px
+  @include mixin.mobile-l-styles {
+    min-height: 100vh;
+    margin-top: -25vw;
+    padding-top: 25vw;
+    padding-bottom: 30vw;
+    background-size: 375%;
+    background-position: 28% 80%;
+    background-repeat: no-repeat;
+    clip-path: polygon(0 0%, 100% 7%, 100% 100%, 0 100%);
+
+    .border-top {
+      width: 80%;
+    }
+
+    &__title {
+      font-size: var.$heading-size-tiny2x;
+      font-weight: var.$font-weight-normal;
+      margin-bottom: math.div(var.$gutter-base, 1);
+      line-height: var.$line-height-base;
+    }
+
+    &__description {
+      font-size: var.$font-size-small;
+      max-width: 72.5%;
+      margin-bottom: math.div(var.$gutter-base, 0.75);
+    }
+
+    &__carousel-separator {
+      width: 85%;
+    }
+
+    &__artist-name,
+    &__artist-subtitle {
+      align-self: center;
+      height: 24px;
+    }
+
+    &__artist-name {
+      font-size: var.$font-size-medium;
+      margin-top: math.div(var.$gutter-base, 0.5);
+      margin-bottom: 0;
+    }
+
+    &__artist-subtitle {
+      font-size: var.$font-size-small;
+      margin: 0 auto math.div(var.$gutter-base, 0.5);
+      width: 90%;
+    }
+
+    &__artist-text {
+      font-size: var.$font-size-small;
+      line-height: var.$line-height-small;
+      width: 95%;
+    }
+
+    &__artists-button {
+      font-size: var.$font-size-base;
+      margin-top: math.div(var.$gutter-base, 0.75);
+    }
+  }
+}

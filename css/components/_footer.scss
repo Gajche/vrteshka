@@ -1,0 +1,69 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mixin;
+@use "sass:math";
+
+.sponsors-footer {
+  background-color: var.$section_6_bg;
+  padding: var.$gutter-base;
+
+  .sponsors-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0;
+    max-width: 77.5%;
+    margin: 0 auto;
+  }
+
+  .sponsor-logo {
+    flex: 1 1 7.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: auto;
+      padding: 0.625rem;
+      object-fit: contain;
+      display: block;
+    }
+
+    &:nth-child(1) img {
+      height: 70px;
+    }
+
+    &:nth-child(n + 2) img {
+      height: 5.625rem;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .sponsors-footer {
+    padding: var.$gutter-base 0;
+
+    .sponsors-container {
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .sponsors-footer {
+    padding: var.$gutter-base 0;
+
+    .sponsors-container {
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .sponsors-footer {
+    padding: math.div(var.$gutter-base, 3) 0;
+
+    .sponsors-container {
+      max-width: 100%;
+    }
+  }
+}

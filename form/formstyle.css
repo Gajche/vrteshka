@@ -1,0 +1,130 @@
+:root {
+  /* colors */
+  --gf-primary-blue: #1976d2;
+  --gf-primary-gray: #5f5f5f;
+  --gf-transparent: transparent;
+  --gf-light-blue-bg: #e8f0fe;
+  --gf-red-error: #d93025;
+  --gf-page-bg: #adadad;
+  --gf-bg-darkpurple: #352f44;
+  --gf-card-bg: #ffffff;
+  --gf-text-primary: #202124;
+  --gf-text-secondary: #5f6368;
+  --gf-header-image-height: 10rem;
+  --gf-form-max-width: 42rem;
+  /* Font Family*/
+  --ff-h1-p: "Oswald", sans-serif;
+  --ff-body: "Roboto", sans-serif;
+  /*Font Size*/
+  --fs-h1: 2rem;
+  --fs-h6: 1rem;
+  --fs-p: 0.9375rem;
+}
+
+body {
+  font-family: var(--ff-h1-p);
+  background-color: var(--gf-page-bg);
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h6 {
+  font-size: var(--fs-h6);
+}
+
+p {
+  font-size: var(--fs-p);
+}
+
+/* form */
+
+.form-container {
+  max-width: var(--gf-form-max-width);
+  margin: 0 auto;
+  padding-top: 0.625rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.form-header-image {
+  height: var(--gf-header-image-height);
+  background-image: url("../form/image-form/form_bg.png");
+  background-size: cover;
+  background-position: center;
+  /* border-radius: 0.5rem; */
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.form-card {
+  background: var(--gf-card-bg);
+  /* border-radius: 0.5rem; */
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.form-card--top-border {
+  border-top: 10px solid var(--gf-bg-darkpurple);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.btn-primary {
+  color: var(--gf-light-blue-bg);
+  background-color: var(--gf-primary-gray);
+
+  font-weight: 500;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.btn-secondary {
+  background-color: var(--gf-transparent);
+  color: var(--gf-text-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--gf-primary-blue);
+}
+
+.btn-secondary:hover {
+  background-color: var(--gf-primary-blue);
+}
+
+.form-footer-text {
+  font-size: 0.75rem;
+  color: var(--gf-text-primary);
+  text-align: center;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.google-forms-attribution {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.google-forms-attribution svg {
+  width: 2rem;
+  height: 2rem;
+
+  fill: var(--gf-light-blue-bg);
+}

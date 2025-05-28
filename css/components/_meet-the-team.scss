@@ -1,0 +1,265 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mixin;
+@use "sass:math";
+
+// Team section styles
+.team-section {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: var.$section_6_bg;
+  clip-path: polygon(26.5% 0, 100% 6%, 100% 100%, 0 100%, 0 6%);
+  margin-top: -5vw;
+  padding-top: 6vw;
+  padding-bottom: 11vw;
+
+  .team-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    h2 {
+      font-family: var.$font-family-heading;
+      font-size: var.$heading-size-big1;
+      text-align: center;
+      margin-bottom: var.$gutter-base;
+      width: 60%;
+      margin-inline: auto;
+    }
+
+    .quote {
+      font-family: var.$font-family-base;
+      width: 54.5%;
+      margin: 0 auto math.div(var.$gutter-base, 0.5);
+      text-align: center;
+    }
+  }
+
+  .team-cards {
+    width: 72.5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: math.div(var.$gutter-base, 1.5);
+    margin-inline: auto;
+
+    .team-card {
+      flex: 1 1 calc(33.333% - math.div(var.$gutter-base, 1.5));
+      height: 100%;
+      border: 0.188rem solid var.$color-black;
+      display: flex;
+      flex-direction: column;
+      padding: math.div(var.$gutter-base, 1.5);
+
+      // Ensure all cards have exactly the same width
+      min-width: calc(33.333% - var.$gutter-base);
+      max-width: calc(33.333% - var.$gutter-base);
+
+      .team-card-content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: flex-start;
+      }
+
+      .name {
+        font-family: var.$font-family-normal;
+        font-weight: var.$font-weight-light;
+        font-size: var.$heading-size-big1;
+        margin-bottom: math.div(var.$gutter-base, 2);
+        color: var.$color-black;
+        line-height: var.$line-height-mobile;
+      }
+
+      .role {
+        font-family: var.$font-family-normal;
+        font-size: var.$font-size-small;
+        font-weight: var.$font-weight-bold;
+        line-height: var.$line-height-mobile1;
+      }
+
+      .image-container {
+        margin-top: auto;
+        width: 100%;
+        height: 15.625rem;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        overflow: hidden;
+        position: relative;
+        border-radius: math.div(var.$gutter-base, 3);
+
+        img {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100%;
+          height: 15.625rem;
+          object-fit: cover;
+          object-position: center bottom;
+        }
+      }
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: 1440px) {
+  .team-section {
+    .team-cards {
+      .team-card {
+        // Fixed class name
+        flex: 1 1 calc(33.333% - var.$gutter-base);
+        min-width: calc(33.333% - var.$gutter-base);
+        max-width: calc(33.333% - var.$gutter-base);
+        height: 28.75rem;
+
+        .image-container {
+          height: 15.625rem;
+
+          img {
+            height: 15.625rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 1024px
+@media (max-width: 1024px) {
+  .team-section {
+    margin-top: -6vw;
+    padding-top: 10vw;
+    padding-bottom: 13vw;
+
+    .team-text {
+      h2 {
+        font-size: var.$heading-size-medium;
+      }
+      .quote {
+        width: 72.5%;
+      }
+    }
+
+    .team-cards {
+      width: 100%;
+      
+      .team-card {
+        flex: 1 1 calc(33.333% - var.$gutter-base);
+        min-width: calc(33.333% - var.$gutter-base);
+        max-width: calc(33.333% - var.$gutter-base);
+        height: 27.5rem;
+
+        .image-container {
+          height: 15.625rem;
+
+          img {
+            height: 15.625rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 768px
+@include mixin.tablet-styles {
+  .team-section {
+    margin-top: -8vw;
+    padding-top: 13vw;
+    padding-bottom: 17vw;
+    .team-text {
+      h2,
+      .quote {
+        width: 72.5%;
+      }
+    }
+
+    .team-cards {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: math.div(var.$gutter-base, 1.25);
+
+      .team-card {
+        flex: 1 1 calc(33.333% - var.$gutter-base);
+        min-width: calc(33.333% - var.$gutter-base);
+        max-width: calc(33.333% - var.$gutter-base);
+        padding: 1.2rem;
+        height: auto;
+
+        .team-card-content {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .image-container {
+          height: 15.625rem;
+          flex-shrink: 0;
+          flex-grow: 0;
+          width: 100%;
+
+          img {
+            height: 250px;
+            object-fit: cover;
+            object-position: center bottom;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 425px
+@media (max-width: 425px) {
+  .team-section {
+    margin-top: -26vw;
+    padding-top: 21vw;
+    padding-bottom: 24vw;
+
+    clip-path: polygon(26.5% 0, 100% 2%, 100% 100%, 0 100%, 0 2%);
+    .team-text {
+      h2 {
+        font-size: var.$heading-size-tiny2x;
+        margin-bottom: math.div(var.$gutter-base, 0.75);
+      }
+      .quote {
+        font-size: var.$font-size-small;
+      }
+      h2,
+      .quote {
+        width: 75%;
+      }
+    }
+
+    .team-cards {
+      flex-direction: column;
+      width: 90%;
+      gap: 0px;
+
+      .team-card {
+        flex: 1 1 100%;
+        min-width: 100%;
+        height: auto;
+        margin-bottom: math.div(var.$gutter-base, 1.5);
+
+        .name {
+          font-size: var.$heading-size-small;
+        }
+
+        .image-container {
+          height: 12.5rem;
+
+          img {
+            height: 12.5rem;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
+}

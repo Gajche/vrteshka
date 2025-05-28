@@ -1,0 +1,223 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mixin;
+@use "sass:math";
+
+.introduction {
+  background-color: var.$color-white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 0;
+  margin-top: -5vw;
+  padding-top: 5.5vw;
+  padding-bottom: 7vw;
+
+  .wrap {
+    width: 72.5%;
+    height: 100%;
+    padding: math.div(var.$gutter-base, 1) 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  &__item {
+    flex-basis: 33.333%;
+    padding: math.div(var.$gutter-base, 0.5) math.div(var.$gutter-base, 2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &:first-child {
+      text-align: left;
+      align-self: center;
+    }
+
+    &:last-child {
+      text-align: end;
+      align-self: center;
+    }
+  }
+
+  &__image {
+    flex-basis: 33.333%;
+    padding: math.div(var.$gutter-base, 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 9.688rem;
+    }
+  }
+
+  &__title {
+    font-family: var.$font-family-normal;
+    font-size: var.$heading-size-big2x;
+    font-weight: var.$font-weight-light;
+    margin-bottom: math.div(var.$gutter-base, 2);
+  }
+
+  .introduction__item--last {
+    .introduction__title,
+    .introduction__text {
+      text-align: end;
+    }
+  }
+
+  &__text {
+    font-family: var.$font-family-base;
+    font-size: var.$font-size-base;
+    line-height: var.$line-height-base;
+    margin-bottom: math.div(var.$gutter-base, 4);
+  }
+
+  &__social {
+    margin-top: var.$gutter-base;
+    align-self: flex-end;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var.$color-dark-grey;
+      color: var.$color-white;
+      border-radius: 0.375rem;
+      text-decoration: none;
+      font-size: 1.5rem;
+      padding: 0.7rem 0.8rem;
+
+      &:hover {
+        background-color: var.$insta-bg;
+        opacity: 0.8;
+        transition: opacity 0.4s ease-in-out;
+      }
+    }
+  }
+
+  // Mobile 425px
+  @include mixin.mobile-l-styles {
+    min-height: 100vh;
+    margin-top: -25vw !important;
+    padding-top: 35vw !important;
+    padding-bottom: 35vw !important;
+
+    .wrap {
+      flex-direction: column;
+      align-items: center;
+      gap: 0px !important;
+      padding: 0.625rem;
+    }
+
+    .introduction__item {
+      flex-basis: 100%;
+      padding: 0px;
+      display: block;
+      text-align: center;
+
+      &:first-child,
+      &:last-child {
+        padding: 0.625rem;
+        text-align: center;
+        align-items: center;
+      }
+    }
+
+    .introduction__image {
+      flex-basis: 100%;
+      padding: 0.625rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        height: 15rem;
+        margin-top: 0;
+      }
+    }
+
+    .introduction__title {
+      font-size: var.$heading-size-small;
+      margin-bottom: math.div(var.$gutter-base, 2);
+      text-align: center;
+    }
+
+    .introduction__item--last {
+      .introduction__title,
+      .introduction__text {
+        text-align: center;
+      }
+    }
+
+    &__social {
+      align-self: center;
+      margin-top: math.div(var.$gutter-base, 0.75);
+    }
+  }
+
+  // Tablet 768px
+  @include mixin.tablet-styles {
+    margin-top: -7vw;
+    padding-top: 7vw;
+    padding-bottom: 7vw;
+    .wrap {
+      width: 100%;
+      flex-wrap: nowrap;
+      gap: 2.188rem;
+      align-items: center;
+    }
+
+    &__image {
+      flex-basis: 33.333%;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        max-width: 7.5rem;
+        margin: 0;
+        display: block;
+      }
+    }
+
+    &__item {
+      flex-basis: 33.333%;
+      text-align: left;
+      padding: 2.5rem math.div(var.$gutter-base, 2);
+    }
+
+    &__title {
+      font-size: var.$heading-size-big;
+      margin-bottom: math.div(var.$gutter-base, 4);
+    }
+  }
+
+  // Laptop 1024px
+  @include mixin.laptop-m-styles {
+    margin-top: -5vw;
+    padding-top: 5vw;
+    padding-bottom: 14vw;
+    .wrap {
+      width: 100%;
+      gap: 2.188rem;
+    }
+
+    &__title {
+      font-size: var.$heading-size-big;
+      margin-bottom: math.div(var.$gutter-base, 4);
+    }
+
+    &__text {
+      width: 100%;
+      align-self: flex-end;
+      font-size: var.$font-size-small;
+    }
+  }
+}

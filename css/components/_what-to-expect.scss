@@ -1,0 +1,379 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mixin;
+@use "sass:math";
+
+// button
+@keyframes shake-n-rotate {
+  10% {
+    transform: translate3d(-1px, 0, 0) rotate(-1deg);
+  }
+  20% {
+    transform: translate3d(2px, 0, 0) rotate(1.5deg);
+  }
+  30% {
+    transform: translate3d(-4px, 0, 0) rotate(-2deg);
+  }
+  40% {
+    transform: translate3d(4px, 0, 0) rotate(2.5deg);
+  }
+  50% {
+    transform: translate3d(-4px, 0, 0) rotate(-2deg);
+  }
+  60% {
+    transform: translate3d(4px, 0, 0) rotate(2.5deg);
+  }
+  70% {
+    transform: translate3d(-4px, 0, 0) rotate(-2deg);
+  }
+  80% {
+    transform: translate3d(2px, 0, 0) rotate(1.5deg);
+  }
+  90% {
+    transform: translate3d(-1px, 0, 0) rotate(-1deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+
+.what-to-expect {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("../img/Section_5_Background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var.$color-white;
+  width: 100%;
+  min-height: 100vh;
+  padding-inline: var.$gutter-base * 2;
+  clip-path: polygon(0px 10px, 25% 85px, 100% 10px, 100% 100%, 0% 100%);
+  margin-top: -8vw;
+  padding-top: 10vw;
+  padding-bottom: 11vw;
+
+  .main__container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: math.div(var.$gutter-base, 0.6);
+  }
+
+  &__title {
+    font-size: var.$heading-size-big1;
+    font-family: var.$font-family-heading;
+
+    text-transform: uppercase;
+    margin-bottom: math.div(var.$gutter-base, 2);
+    color: var.$color-white;
+  }
+
+  &__subtitle {
+    font-family: var.$font-family-base;
+    font-size: var.$font-size-base;
+    width: 65%;
+    margin: 0 auto;
+    color: var.$color-white;
+  }
+
+  &__content {
+    flex-basis: 33.333%;
+    width: 82.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: math.div(var.$gutter-base, 2.5) 0;
+  }
+
+  &__video {
+    flex: 0 0 calc(33.333% - math.div(var.$gutter-base, 2));
+    padding: math.div(var.$gutter-base, 1.5);
+
+    .video-container {
+      height: 100%;
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    }
+  }
+
+  &__map {
+    flex: 0 0 calc(33.333% - math.div(var.$gutter-base, 2));
+    padding: math.div(var.$gutter-base, 1.5);
+
+    .map-image {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__program {
+    flex: 0 0 calc(33.333% - math.div(var.$gutter-base, 2));
+    padding: math.div(var.$gutter-base, 1.5);
+    position: relative;
+    cursor: grab;
+
+    &.dragging {
+      cursor: grabbing;
+      user-select: auto;
+    }
+
+    .carousel {
+      position: relative;
+      height: 100%;
+      overflow: visible;
+
+      .carousel-inner {
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+      .carousel-control-prev,
+      .carousel-control-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+      }
+
+      .carousel-item {
+        transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        height: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .carousel-indicators {
+        position: absolute;
+        bottom: -34px;
+        left: 0px;
+        display: flex;
+        justify-content: center;
+        padding-left: 0;
+        margin-right: 15%;
+        margin-left: 15%;
+        list-style: none;
+
+        li {
+          position: relative;
+          flex: 0 1 auto;
+          width: 6px;
+          height: 6px;
+          margin-right: 6px;
+          margin-left: 6px;
+          cursor: pointer;
+          background-color: rgba(var.$color-white, 0.5);
+          border-radius: 50%;
+          transition: opacity 0.6s ease;
+
+          &.active {
+            background-color: var.$color-black;
+          }
+        }
+      }
+    }
+  }
+
+  &__footer {
+    text-align: center;
+    margin-top: var.$gutter-base * 2;
+    position: relative;
+
+    .join-button {
+      font-family: var.$font-family-base;
+      font-size: var.$font-size-medium;
+      background-color: var.$color-button-bg;
+      color: var.$color-button-text;
+      border: none;
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.3rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+      position: relative;
+      display: block;
+      width: fit-content;
+      margin: auto;
+
+      &:hover,
+      &:focus {
+        background-color: var.$color-black;
+        color: var.$color-white;
+        animation: shake-n-rotate 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97)
+          both;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        perspective: 62.5rem;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@include mixin.laptop-m-styles {
+  .what-to-expect {
+    width: 100%;
+    height: 100%;
+    margin-top: -12vw;
+    padding-top: 14vw;
+    padding-bottom: 14vw;
+    padding-inline: 10px;
+
+    &__title {
+      font-size: var.$heading-size-medium;
+    }
+
+    &__subtitle {
+      width: 58.5%;
+    }
+
+    &__content {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__video,
+    &__program {
+      padding-inline: math.div(var.$gutter-base, 0.45);
+    }
+
+    &__map,
+    &__program,
+    &__video {
+      flex: 0 0 50%;
+
+      img,
+      .carousel-inner,
+      .carousel-item,
+      .carousel-item img {
+        height: auto;
+        background-position: center center;
+        object-fit: cover;
+      }
+
+      .carousel-control-prev {
+        left: -50px;
+      }
+
+      .carousel-control-next {
+        right: -50px;
+      }
+    }
+
+    &__video {
+      margin-right: 2px;
+    }
+  }
+}
+
+@include mixin.tablet-styles {
+  .what-to-expect {
+    width: 100%;
+    height: 100%;
+    padding: var.$gutter-base 0;
+    margin-top: -12vw;
+    padding-top: 14vw;
+    padding-bottom: 14vw;
+
+    &__title {
+      font-size: var.$heading-size-medium;
+    }
+
+    &__subtitle {
+      width: 58.5%;
+    }
+
+    &__content {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__map,
+    &__program,
+    &__video {
+      flex: 0 0 50%;
+      height: 100%;
+      padding: math.div(var.$gutter-base, 1.25);
+
+      img,
+      .carousel-inner,
+      .carousel-item,
+      .carousel-item img {
+        width: 100%;
+        height: 100%;
+        background-position: center center;
+        object-fit: cover;
+      }
+
+      .carousel-control-prev {
+        left: 0px;
+      }
+
+      .carousel-control-next {
+        right: 0px;
+      }
+    }
+
+    &__video {
+      margin-right: 2px;
+    }
+  }
+}
+
+@include mixin.mobile-l-styles {
+  .what-to-expect {
+    margin-top: -20vw;
+    padding-top: 30vw;
+    padding-bottom: 30vw;
+
+    &__header {
+      margin-bottom: 0;
+    }
+
+    &__title {
+      font-size: var.$heading-size-tiny2x;
+      font-weight: var.$font-weight-normal;
+    }
+
+    &__subtitle {
+      font-size: var.$font-size-small;
+      width: 72.5%;
+      margin-bottom: math.div(var.$gutter-base, 0.75);
+    }
+
+    &__content {
+      padding-inline: math.div(var.$gutter-base, 0.65);
+    }
+
+    &__map,
+    &__program,
+    &__video {
+      flex: 0 0 100%;
+      padding: math.div(var.$gutter-base, 2);
+    }
+  }
+  .what-to-expect__footer #joinButton {
+    font-size: 16px;
+    width: fit-content;
+  }
+}
