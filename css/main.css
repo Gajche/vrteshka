@@ -1270,7 +1270,7 @@ body {
   .what-to-expect {
     margin-top: -22vw;
     padding-top: 30vw;
-    padding-bottom: 30vw;
+    padding-bottom: 32vw;
   }
   .what-to-expect__header {
     margin-bottom: 0;
@@ -1419,6 +1419,7 @@ body {
   height: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url(../img/Section7.JPG);
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: 70% 50%;
   display: flex;
   justify-content: center;
