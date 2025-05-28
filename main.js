@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const width = window.innerWidth;
 
     if (width <= 425) return { x: "28%", y: 85 }; // Mobile
+    if (width <= 576) return { x: "28%", y: 85 }; // Mobile
     if (width <= 768) return { x: "50%", y: 77 }; // Tablet
     if (width <= 1024) return { x: "45%", y: 72 }; // Laptop
     return { x: "50%", y: 72 }; // Desktop
