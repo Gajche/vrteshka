@@ -189,7 +189,7 @@ body {
 }
 @media (max-width: 767px) {
   .hero {
-    min-height: calc(100vh - 38vw);
+    min-height: 100vh;
     padding-top: 8vw;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 99%, 0 89%);
             clip-path: polygon(0 0, 100% 0, 100% 99%, 0 89%);
@@ -798,6 +798,7 @@ body {
     margin-top: -19vw;
     padding-top: 30vw;
     padding-bottom: 30vw;
+    padding-inline: 0.625rem;
     -webkit-clip-path: polygon(0px 70px, 75% 0, 100% 70px, 100% 100%, 0% 100%);
             clip-path: polygon(0px 70px, 75% 0, 100% 70px, 100% 100%, 0% 100%);
   }
@@ -915,7 +916,7 @@ body {
   .past-events-container .bottom-row .column:nth-child(3) p {
     font-size: 0.875rem;
     text-align: center;
-    width: 82.5%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0.9375rem;

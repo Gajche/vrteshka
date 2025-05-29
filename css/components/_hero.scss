@@ -167,7 +167,7 @@
 // Mobile max 425px
 @include mixin.mobile-l-styles {
   .hero {
-    min-height: calc(100vh - 38vw);
+    min-height: calc(100vh - 36vw);
     padding-top: 8vw;
     clip-path: polygon(0 0, 100% 0, 100% 99%, 0 89%);
 
