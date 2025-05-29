@@ -189,7 +189,7 @@ body {
 }
 @media (max-width: 767px) {
   .hero {
-    min-height: 100vh;
+    min-height: calc(100vh - 36vw);
     padding-top: 8vw;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 99%, 0 89%);
             clip-path: polygon(0 0, 100% 0, 100% 99%, 0 89%);
@@ -307,8 +307,8 @@ body {
   .introduction {
     min-height: 100vh;
     margin-top: -25vw !important;
-    padding-top: 35vw !important;
-    padding-bottom: 35vw !important;
+    padding-top: 33vw !important;
+    padding-bottom: 36vw !important;
   }
   .introduction .wrap {
     flex-direction: column;
