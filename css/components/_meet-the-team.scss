@@ -146,7 +146,7 @@
 
     .team-cards {
       width: 100%;
-      
+
       .team-card {
         flex: 1 1 calc(33.333% - var.$gutter-base);
         min-width: calc(33.333% - var.$gutter-base);
@@ -215,7 +215,7 @@
 }
 
 // 425px
-@media (max-width: 425px) {
+@media (max-width: 767px) {
   .team-section {
     margin-top: -26vw;
     padding-top: 21vw;
@@ -232,7 +232,7 @@
       }
       h2,
       .quote {
-        width: 75%;
+        width: 85%;
       }
     }
 
