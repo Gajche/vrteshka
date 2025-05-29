@@ -1,6 +1,6 @@
 # BrainsterProjects_NikolovskiDejan_FS21
 
-This is my first individual project.
+## This is my first individual project.
 
 - Created in VS Code using:
 
@@ -14,10 +14,18 @@ This is my first individual project.
 
 - Page optimized for mobile and desktop resolutions:
 
-1. 1440px
-2. 1024px
-3. 768px
-4. 425px
+1. 1440px - width
+2. 1024px - width
+3. 768px - width
+4. 425px - width
 
 - Tested on 1600px x 900px
 - Browser used for testing and inspecting, Microsoft Edge.
+
+- pushed to github for testing purposes
+- https://github.com/Gajche/vrteshka
+
+- hosted/deployed to netlify for mobile testing purposes
+- https://vrteshka.netlify.app/
+
+- When I open https://vrteshka.netlify.app/ in Chrome on PC , footer not appearing. Edge and Firefox works fine.

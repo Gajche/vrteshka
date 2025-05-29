@@ -5,6 +5,7 @@
 .sponsors-footer {
   background-color: var.$section_6_bg;
   padding: var.$gutter-base;
+  max-width: 100%;
 
   .sponsors-container {
     display: flex;
@@ -48,7 +49,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .sponsors-footer {
     padding: var.$gutter-base 0;
 
@@ -58,7 +59,7 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 767px) {
   .sponsors-footer {
     padding: math.div(var.$gutter-base, 3) 0;
 
