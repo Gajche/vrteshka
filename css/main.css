@@ -1572,8 +1572,8 @@ body {
     -webkit-clip-path: polygon(50% 6%, 100% 0, 100% 100%, 0 100%, 0 0);
             clip-path: polygon(50% 6%, 100% 0, 100% 100%, 0 100%, 0 0);
     margin-top: -14vw;
-    padding-top: 8vw;
-    padding-bottom: 24vw;
+    padding-top: 4vw;
+    padding-bottom: 20vw;
   }
   .location-section .location__container {
     width: 100%;
