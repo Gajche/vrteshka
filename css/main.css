@@ -189,7 +189,7 @@ body {
 }
 @media (max-width: 425px) {
   .hero {
-    min-height: calc(100vh - 200px);
+    min-height: 100%;
     padding-top: 8vw;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 99%, 0 89%);
             clip-path: polygon(0 0, 100% 0, 100% 99%, 0 89%);
