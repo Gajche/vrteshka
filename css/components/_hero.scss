@@ -27,7 +27,7 @@
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
       url("../img/Section1.png");
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
   }
 
@@ -167,7 +167,7 @@
 // Mobile max 425px
 @include mixin.mobile-l-styles {
   .hero {
-    min-height: calc(100vh - 200px);
+    min-height: calc(100vh - 36vw);
     padding-top: 8vw;
     clip-path: polygon(0 0, 100% 0, 100% 99%, 0 89%);
 
