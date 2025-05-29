@@ -43,7 +43,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-@media (max-width: 1023px) {
+@media (max-width: 768px) {
   .hero__wrap {
     width: 100%;
     padding-left: 0.9375rem;
@@ -162,7 +162,7 @@ body {
     padding: 0.5rem 1rem;
   }
 }
-@media (max-width: 1023px) {
+@media (max-width: 768px) {
   .hero {
     min-height: calc(100vh + 11.75rem);
     padding-top: 4vw;
@@ -187,7 +187,7 @@ body {
     padding: 0.5rem 1rem;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 425px) {
   .hero {
     min-height: calc(100vh - 200px);
     padding-top: 8vw;
@@ -303,7 +303,7 @@ body {
   opacity: 0.8;
   transition: opacity 0.4s ease-in-out;
 }
-@media (max-width: 767px) {
+@media (max-width: 425px) {
   .introduction {
     min-height: 100vh;
     margin-top: -25vw !important;
@@ -352,7 +352,7 @@ body {
     margin-top: 2.5rem;
   }
 }
-@media (max-width: 1023px) {
+@media (max-width: 768px) {
   .introduction {
     margin-top: -7vw;
     padding-top: 7vw;
@@ -576,7 +576,7 @@ body {
     width: 52.5%;
   }
 }
-@media (max-width: 1023px) {
+@media (max-width: 768px) {
   .artists {
     margin-top: -14vw;
     padding-top: 14vw;
@@ -618,7 +618,7 @@ body {
     margin-top: 2.8846153846rem;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 425px) {
   .artists {
     min-height: 100vh;
     margin-top: -28vw;
@@ -790,7 +790,7 @@ body {
   height: 248px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 425px) {
   .past-events-container {
     display: flex;
     justify-content: center;
@@ -1212,7 +1212,7 @@ body {
     margin-right: 2px;
   }
 }
-@media (max-width: 1023px) {
+@media (max-width: 768px) {
   .what-to-expect {
     width: 100%;
     height: 100%;
@@ -1265,7 +1265,7 @@ body {
     margin-right: 2px;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 425px) {
   .what-to-expect {
     margin-top: -22vw;
     padding-top: 30vw;
@@ -1358,7 +1358,7 @@ body {
     font-size: 1rem;
   }
 }
-@media (max-width: 1023px) {
+@media (max-width: 768px) {
   .organization-section {
     width: 100%;
     height: 100%;
@@ -1382,7 +1382,7 @@ body {
     font-size: 1rem;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 425px) {
   .organization-section {
     width: 100%;
     margin-top: -32vw;
@@ -1527,7 +1527,7 @@ body {
     height: auto;
   }
 }
-@media (max-width: 1023px) {
+@media (max-width: 768px) {
   .location-section {
     min-width: 100% vw;
     background-size: 140%;
@@ -1562,7 +1562,7 @@ body {
     height: auto;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 425px) {
   .location-section {
     min-width: 100%;
     background-size: 300%;
@@ -1742,7 +1742,7 @@ body {
     height: 15.625rem;
   }
 }
-@media (max-width: 1023px) {
+@media (max-width: 768px) {
   .team-section {
     margin-top: -8vw;
     padding-top: 13vw;
@@ -1784,7 +1784,7 @@ body {
        object-position: center bottom;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 425px) {
   .team-section {
     margin-top: -26vw;
     padding-top: 21vw;
@@ -1972,8 +1972,15 @@ body {
   transition: opacity 0.4s ease-in-out;
 }
 
+@media (max-width: 1024px) {
+  .collaborators-section .collaborators-container .collaborators-content-wrapper .collaborators-title {
+    font-size: 1.875rem;
+    line-height: 1.5;
+    width: 80%;
+  }
+}
 /* Tablet 768px */
-@media (max-width: 1023px) {
+@media (max-width: 768px) {
   .collaborators-section {
     margin-top: -11vw;
     padding-top: 12vw;
@@ -2004,15 +2011,8 @@ body {
     align-self: flex-end;
   }
 }
-@media (max-width: 1024px) {
-  .collaborators-section .collaborators-container .collaborators-content-wrapper .collaborators-title {
-    font-size: 1.875rem;
-    line-height: 1.5;
-    width: 80%;
-  }
-}
 /* Mobile 425px */
-@media (max-width: 767px) {
+@media (max-width: 425px) {
   .collaborators-section {
     margin-top: -17vw;
     padding-top: 14vw;
@@ -2101,7 +2101,7 @@ body {
     max-width: 100%;
   }
 }
-@media (max-width: 1023px) {
+@media (max-width: 768px) {
   .sponsors-footer {
     padding: 1.875rem 0;
   }
@@ -2109,7 +2109,7 @@ body {
     max-width: 100%;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 425px) {
   .sponsors-footer {
     padding: 0.625rem 0;
   }

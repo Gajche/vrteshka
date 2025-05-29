@@ -172,6 +172,18 @@
   }
 }
 
+// Laptop 1024px
+@include mixin.laptop-m-styles {
+  .collaborators-section
+    .collaborators-container
+    .collaborators-content-wrapper
+    .collaborators-title {
+    font-size: var.$heading-size-medium;
+    line-height: var.$line-height-base;
+    width: 80%;
+  }
+}
+
 /* Tablet 768px */
 @include mixin.tablet-styles {
   .collaborators-section {
@@ -214,19 +226,10 @@
   }
 }
 
-@include mixin.laptop-m-styles {
-  .collaborators-section
-    .collaborators-container
-    .collaborators-content-wrapper
-    .collaborators-title {
-    font-size: var.$heading-size-medium;
-    line-height: var.$line-height-base;
-    width: 80%;
-  }
-}
+
 
 /* Mobile 425px */
-@media (max-width: 767px) {
+@media (max-width: 425px) {
   .collaborators-section {
     margin-top: -17vw;
     padding-top: 14vw;

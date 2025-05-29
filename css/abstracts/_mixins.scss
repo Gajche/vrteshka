@@ -20,29 +20,29 @@
   }
 }
 
-// @mixin tablet-styles {
-//   @media (max-width: 768px) {
-//     @content;
-//   }
-// }
-
 @mixin tablet-styles {
-  @media (max-width: 1023px) {
+  @media (max-width: 768px) {
     @content;
   }
 }
 
-// @mixin mobile-l-styles {
-//   @media (max-width: 425px) {
+// @mixin tablet-styles {
+//   @media (max-width: 1023px) {
 //     @content;
 //   }
 // }
 
 @mixin mobile-l-styles {
-  @media (max-width: 767px) {
+  @media (max-width: 425px) {
     @content;
   }
 }
+
+// @mixin mobile-l-styles {
+//   @media (max-width: 767px) {
+//     @content;
+//   }
+// }
 
 // @mixin mobile-l-styles {
 //   @media (min-width: 345px), (max-width: 425px) {
