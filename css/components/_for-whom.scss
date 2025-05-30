@@ -31,27 +31,72 @@
   }
 }
 
+// svg top
+.artists-shape-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.artists-shape-top svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 68px;
+}
+
+.artists-shape-top .artists-shape-fill {
+  fill: var.$color-white;
+}
+
+// svg bottom
+.artists-shape-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg) scale(-1, 1);
+}
+
+.artists-shape-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 0px);
+  height: 62px;
+}
+
+.artists-shape-bottom .artists-bottom-shape-fill {
+  fill: var.$color-dark-grey;
+}
+
 // section for whom
 .artists {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  min-height: calc(100vh - 80px);
   color: var.$color-white;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("../img/Section_3_Background.jpg");
   background-size: cover;
-  background-position: 50% 72%;
-  clip-path: polygon(0 0%, 100% 11%, 100% 100%, 0 100%);
+  background-position: 50% 75%;
+  // clip-path: polygon(0 0%, 100% 11%, 100% 100%, 0 100%);
   transition: background-position 0.4s ease-in-out;
   will-change: background-position;
   backface-visibility: hidden;
 
-  margin-top: -7vw;
-  padding-top: 9vw;
-  padding-bottom: 8vw;
+  // margin-top: -7vw;
+  // padding-top: 9vw;
+  // padding-bottom: 8vw;
+  // padding-block: 120px;
 
   &__content-wrapper {
     width: 100%;
@@ -171,9 +216,9 @@
 
   // Laptop 1024px
   @include mixin.laptop-m-styles {
-    margin-top: -14vw;
-    padding-top: 12vw;
-    padding-bottom: 12vw;
+    // margin-top: -14vw;
+    // padding-top: 12vw;
+    // padding-bottom: 12vw;
     background-size: 150%;
     background-position: 45% 72%;
 
@@ -198,9 +243,10 @@
 
   // Tablet 768px
   @include mixin.tablet-styles {
-    margin-top: -14vw;
-    padding-top: 14vw;
-    padding-bottom: 14vw;
+    min-height: 100vh;
+    // margin-top: -14vw;
+    // padding-top: 14vw;
+    // padding-bottom: 14vw;
     background-size: 200%;
     background-position: 48% 71%;
     background-repeat: no-repeat;
@@ -249,14 +295,16 @@
   // Mobile 425px
   @include mixin.mobile-l-styles {
     min-height: 100vh;
-    margin-top: -28vw;
-    padding-top: 25vw;
-    padding-bottom: 30vw;
-    background-size: 375%;
-    background-position: 28% 78%;
+    // margin-top: -28vw;
+    // padding-top: 30px;
+    // padding-bottom: 30vw;
+    background-size: 365%;
+    background-position: 28% 80%;
     background-repeat: no-repeat;
-    // background-size: cover;
-    clip-path: polygon(0 0%, 100% 7%, 100% 100%, 0 100%);
+
+    // clip-path: polygon(0 0%, 100% 7%, 100% 100%, 0 100%);
+
+    padding-block: 110px;
 
     .border-top {
       width: 80%;
@@ -267,6 +315,8 @@
       font-weight: var.$font-weight-normal;
       margin-bottom: math.div(var.$gutter-base, 1);
       line-height: var.$line-height-base;
+      max-width: 85%;
+      margin-inline: auto;
     }
 
     &__description {

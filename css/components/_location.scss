@@ -2,6 +2,50 @@
 @use "../abstracts/mixins" as mixin;
 @use "sass:math";
 
+// svg top
+.location-shape-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.location-shape-top svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 90px;
+  transform: scale(-1, 1);
+}
+
+.location-shape-top .location-shape-fill {
+  fill: var.$section_6_bg;
+}
+
+// svg bottom
+.meet-shape-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.meet-shape-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 0px);
+  height: 60px;
+}
+
+.meet-shape-bottom .meet-bottom-shape-fill {
+  fill: var.$section_6_bg;
+}
+
 // Location Section
 .location-section {
   position: relative;
@@ -14,10 +58,11 @@
   background-position: 70% 50%;
   display: flex;
   justify-content: center;
-  clip-path: polygon(50% 12%, 100% 0, 100% 100%, 0 100%, 0 0);
-  margin-top: -8vw;
-  padding-top: 6vw;
-  padding-bottom: 4vw;
+  // clip-path: polygon(50% 12%, 100% 0, 100% 100%, 0 100%, 0 0);
+  // margin-top: -8vw;
+  // padding-top: 6vw;
+  // padding-bottom: 4vw;
+  padding-block: 80px;
 
   .location__container {
     max-width: 100%;
@@ -26,11 +71,12 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    padding-top: 40px;
 
     .location-left,
     .location-right {
       flex: 0 0 50%;
-      padding: var.$gutter-base;
+      padding: 10px;
     }
 
     .location-left {
@@ -96,9 +142,9 @@
     background-size: 100%;
     background-position: 55% 65%;
     background-repeat: no-repeat;
-    margin-top: -10vw;
-    padding-top: 13vw;
-    padding-bottom: 8vw;
+    // margin-top: -10vw;
+    // padding-top: 13vw;
+    // padding-bottom: 8vw;
   }
 
   .location-section .location__container {
@@ -132,13 +178,13 @@
 // Tablet 768px
 @include mixin.tablet-styles {
   .location-section {
-    min-width: 100%vw;
+    min-width: 100%;
     background-size: 140%;
     background-position: 50% 60%;
     background-repeat: no-repeat;
-    margin-top: -10vw;
-    padding-top: 16vw;
-    padding-bottom: 12vw;
+    // margin-top: -10vw;
+    // padding-top: 16vw;
+    // padding-bottom: 12vw;
   }
 
   .location-section .location__container {
@@ -178,10 +224,10 @@
     background-position: 49.5% 100%;
     background-repeat: no-repeat;
     padding-inline: math.div(var.$gutter-base, 1);
-    clip-path: polygon(50% 6%, 100% 0, 100% 100%, 0 100%, 0 0);
-    margin-top: -14vw;
-    padding-top: 4vw;
-    padding-bottom: 20vw;
+    // clip-path: polygon(50% 6%, 100% 0, 100% 100%, 0 100%, 0 0);
+    // margin-top: -14vw;
+    // padding-top: 4vw;
+    // padding-bottom: 20vw;
 
     .location__container {
       width: 100%;

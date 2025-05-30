@@ -11,20 +11,19 @@
   padding-inline: math.div(var.$gutter-base, 0.5);
   background-color: var.$section_6_bg;
 
-  clip-path: polygon(
-    35.5% 90px,
-    66.5% 20px,
-    100% 110px,
-    100% 100%,
-    0px 100%,
-    0px 110px,
-    23.5% 75px
-  );
-  margin-top: -10vw;
-  padding-top: 10vw;
-  padding-bottom: 11vw;
-
- 
+  // clip-path: polygon(
+  //   35.5% 90px,
+  //   66.5% 20px,
+  //   100% 110px,
+  //   100% 100%,
+  //   0px 100%,
+  //   0px 110px,
+  //   23.5% 75px
+  // );
+  // margin-top: -10vw;
+  // padding-top: 10vw;
+  // padding-bottom: 11vw;
+  padding-block: 40px;
 }
 
 .content-container {
@@ -56,13 +55,10 @@
   .organization-section {
     position: relative;
     width: 100%;
-    
 
-    margin-top: -16vw;
-    padding-top: 14vw;
-    padding-bottom: 14vw;
-
-    
+    // margin-top: -16vw;
+    // padding-top: 14vw;
+    // padding-bottom: 14vw;
 
     .content-container {
       width: 70%;
@@ -88,11 +84,10 @@
   .organization-section {
     width: 100%;
     height: 100%;
-    margin-top: -16vw;
-    padding-top: 20vw;
-    padding-bottom: 16vw;
+    // margin-top: -16vw;
+    // padding-top: 20vw;
+    // padding-bottom: 16vw;
 
-    
     .content-container {
       width: 97.5%;
       display: flex;
@@ -106,7 +101,6 @@
         font-weight: var.$font-weight-normal;
       }
       .section-text {
-      
         font-size: var.$font-size-base;
       }
     }
@@ -117,28 +111,30 @@
 @include mixin.mobile-l-styles {
   .organization-section {
     width: 100%;
-   
-    margin-top: -32vw;
-    padding-inline: 0;
-    padding-top: 40vw;
-    padding-bottom: 30vw;
 
-    clip-path: polygon(
-      35.5% 100px,
-      66.5% 70px,
-      100% 110px,
-      100% 100%,
-      0px 100%,
-      0px 110px,
-      23.5% 90px
-    );
+    // margin-top: -32vw;
+    padding-inline: 0;
+
+    padding-block: 30px;
+
+    // padding-top: 40vw;
+    // padding-bottom: 30vw;
+
+    // clip-path: polygon(
+    //   35.5% 100px,
+    //   66.5% 70px,
+    //   100% 110px,
+    //   100% 100%,
+    //   0px 100%,
+    //   0px 110px,
+    //   23.5% 90px
+    // );
     .content-container {
-      width: 95%;
+      width: 97.5%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      
 
       .section-title {
         font-size: var.$heading-size-tiny2x;

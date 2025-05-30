@@ -2,7 +2,7 @@
 @use "../abstracts/mixins" as mixin;
 @use "sass:math";
 
-// Hero section
+// Hero section - Main landing area with background image and centered content
 .hero {
   position: relative;
   max-width: 100%;
@@ -12,18 +12,46 @@
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.95);
   text-align: center;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 93%);
-  margin-bottom: -5vw;
-  padding-bottom: 5vw;
-  padding-top: math.div(var.$gutter-base, 0.38);
+  // clip-path: polygon(
+  //   0 0,
+  //   100% 0,
+  //   100% 100%,
+  //   0 93%
+  // // )
+  // margin-bottom: -5vw; // Overlaps with next section
+  // padding-bottom: 5vw;
+  // padding-top: math.div(var.$gutter-base, 0.38);
+  padding-block: 150px;
 
+  .hero-shape-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+  }
+
+  .hero-shape-bottom svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 55px;
+  }
+
+  .hero-shape-bottom .hero-shape-fill {
+    fill: var.$color-white;
+  }
+
+  // Background image overlay with dark gradient
   &__overlay {
     position: absolute;
     top: 0;
     left: 0;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0; // REDUNDANT: This already sets top/left/right/bottom to 0
+    // width: 100%; // REDUNDANT: inset: 0 already handles this
+    // height: 100%; // REDUNDANT: inset: 0 already handles this
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
       url("../img/Section1.png");
     background-size: cover;
@@ -31,6 +59,7 @@
     background-repeat: no-repeat;
   }
 
+  // Container wrapper extending base wrap styles
   &__wrap {
     @extend %wrap;
     position: relative;
@@ -38,6 +67,7 @@
     padding: 0;
   }
 
+  // Main content container with dark background
   &__content-box {
     background-color: var.$color-dark-grey;
     padding: math.div(var.$gutter-base, 0.55) math.div(var.$gutter-base, 0.58)
@@ -49,7 +79,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    // text-align: center; // REDUNDANT: Parent .hero already has text-align: center
   }
 
   &__logo {
@@ -103,31 +133,31 @@
 // Laptop 1024px and up
 @include mixin.laptop-m-styles {
   .hero {
-    padding-bottom: 12vw;
+    // padding-top: 4vw;
 
     &__content-box {
       width: 62.5%;
-      margin-top: math.div(var.$gutter-base, 0.4);
+      // margin-top: math.div(var.$gutter-base, 0.4);
       padding-inline: 0;
-      padding-bottom: 5vw;
+      // padding-bottom: 5vw;
     }
 
     &__logo {
-      width: 8%;
+      width: 8%; // REPEATED: Same as tablet
     }
 
     &__heading {
-      font-size: var.$heading-size-big;
+      font-size: var.$heading-size-big; // REPEATED: Same as tablet
     }
 
     &__text {
-      width: 77.5%;
+      width: 77.5%; // REPEATED: Same as tablet
     }
 
     &__button {
       width: 40%;
-      font-size: var.$font-size-medium;
-      padding: 0.5rem 1rem;
+      font-size: var.$font-size-medium; // REPEATED: Same as tablet
+      padding: 0.5rem 1rem; // REPEATED: Same as tablet
     }
   }
 }
@@ -136,30 +166,29 @@
 @include mixin.tablet-styles {
   .hero {
     min-height: calc(100vh + 11.75rem);
-    padding-top: 4vw;
 
     &__content-box {
       max-width: 100%;
       min-width: 85%;
-      margin-top: math.div(var.$gutter-base, 0.5);
+      // margin-top: math.div(var.$gutter-base, 0.5);
     }
 
     &__logo {
-      width: 8%;
+      width: 8%; // REPEATED: Same as laptop
     }
 
     &__heading {
-      font-size: var.$heading-size-big;
+      font-size: var.$heading-size-big; // REPEATED: Same as laptop
     }
 
     &__text {
-      width: 77.5%;
+      width: 77.5%; // REPEATED: Same as laptop
     }
 
     &__button {
       width: auto;
-      font-size: var.$font-size-medium;
-      padding: 0.5rem 1rem;
+      font-size: var.$font-size-medium; // REPEATED: Same as laptop
+      padding: 0.5rem 1rem; // REPEATED: Same as laptop
     }
   }
 }
@@ -167,23 +196,33 @@
 // Mobile max 425px
 @include mixin.mobile-l-styles {
   .hero {
-    min-height: calc(100vh - 36vw);
-    padding-top: 8vw;
-    clip-path: polygon(0 0, 100% 0, 100% 99%, 0 89%);
+    min-height: 100vh;
+    padding-block: 7.5rem;
+
+    // background-position: center;
+    // padding-top: 8vw;
+    // clip-path: polygon(
+    //   0 0,
+    //   100% 0,
+    //   100% 99%,
+    //   0 89%
+    // ); // Different angle than desktop
 
     &__overlay {
-      background-position: center top;
+      min-width: 100%;
+      background-size: cover;
+      // background-position: center top; // Adjust image position for mobile
     }
 
     &__content-box {
       padding: 0;
-      background-color: transparent;
+      background-color: transparent; // Remove background on mobile
       max-width: 100%;
-      margin-top: math.div(var.$gutter-base, 1.5);
+      // margin-top: math.div(var.$gutter-base, 1.5);
     }
 
     &__logo {
-      width: 16%;
+      width: 16%; // Much larger on mobile
     }
 
     &__heading {
@@ -196,8 +235,9 @@
       width: 87.5%;
     }
 
+    // INCONSISTENCY: Uses ID selector instead of class like other breakpoints
     #heroButton {
-      width: auto;
+      // width: fit-content;
       font-size: var.$font-size-base;
       padding: 0.5rem 1.5rem;
     }

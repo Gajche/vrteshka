@@ -36,6 +36,50 @@
   }
 }
 
+// svg top
+.what-shape-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.what-shape-top svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 68px;
+  transform: scale(-1, 1);
+}
+
+.what-shape-top .what-shape-fill {
+  fill: var.$color-dark-grey;
+}
+
+// svg bottom
+.what-shape-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.what-shape-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 0px);
+  height: 105px;
+}
+
+.what-shape-bottom .what-bottom-shape-fill {
+  fill: var.$section_6_bg;
+}
+
 .what-to-expect {
   position: relative;
   display: flex;
@@ -50,10 +94,11 @@
   width: 100%;
   min-height: 100vh;
   padding-inline: var.$gutter-base * 2;
-  clip-path: polygon(0px 10px, 25% 85px, 100% 10px, 100% 100%, 0% 100%);
-  margin-top: -8vw;
-  padding-top: 10vw;
-  padding-bottom: 11vw;
+  // clip-path: polygon(0px 10px, 25% 85px, 100% 10px, 100% 100%, 0% 100%);
+  // margin-top: -8vw;
+  // padding-top: 10vw;
+  // padding-bottom: 11vw;
+  padding-block: 160px;
 
   .main__container {
     width: 100%;
@@ -208,6 +253,7 @@
       display: block;
       width: fit-content;
       margin: auto;
+      z-index: 10000;
 
       &:hover,
       &:focus {
@@ -226,12 +272,13 @@
 
 @include mixin.laptop-m-styles {
   .what-to-expect {
-    width: 100%;
-    height: 100%;
-    margin-top: -12vw;
-    padding-top: 14vw;
-    padding-bottom: 14vw;
+    // width: 100%;
+    // height: 100%;
+    // margin-top: -12vw;
+    // padding-top: 14vw;
+    // padding-bottom: 14vw;
     padding-inline: 10px;
+    padding-block: 80px;
 
     &__title {
       font-size: var.$heading-size-medium;
@@ -287,10 +334,10 @@
   .what-to-expect {
     width: 100%;
     height: 100%;
-    padding: var.$gutter-base 0;
-    margin-top: -12vw;
-    padding-top: 14vw;
-    padding-bottom: 14vw;
+    padding-block: 80px;
+    // margin-top: -12vw;
+    // padding-top: 14vw;
+    // padding-bottom: 14vw;
 
     &__title {
       font-size: var.$heading-size-medium;
@@ -342,9 +389,10 @@
 
 @include mixin.mobile-l-styles {
   .what-to-expect {
-    margin-top: -22vw;
-    padding-top: 30vw;
-    padding-bottom: 32vw;
+    // margin-top: -22vw;
+    // padding-top: 30px;
+    // padding-bottom: 32vw;
+    padding-block: 80px;
 
     &__header {
       margin-bottom: 0;
@@ -373,7 +421,7 @@
     }
   }
   .what-to-expect__footer #joinButton {
-    font-size: 16px;
+    font-size: var.$font-size-base;
     width: fit-content;
   }
 }

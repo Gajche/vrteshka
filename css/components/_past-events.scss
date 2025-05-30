@@ -11,10 +11,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  clip-path: polygon(0px 70px, 88% 0, 100% 20px, 100% 100%, 0% 100%);
-  margin-top: -6vw;
-  padding-top: 8vw;
-  padding-bottom: 10vw;
+  // clip-path: polygon(0px 70px, 88% 0, 100% 20px, 100% 100%, 0% 100%);
+  // margin-top: -6vw;
+  // padding-top: 8vw;
+  // padding-bottom: 10vw;
+  padding-block: 40px;
 }
 
 .images-text {
@@ -151,11 +152,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -19vw;
-    padding-top: 30vw;
-    padding-bottom: 30vw;
+    // margin-top: -19vw;
+    // padding-top: 30vw;
+    // padding-bottom: 30vw;
     padding-inline: math.div(var.$gutter-base, 3);
-    clip-path: polygon(0px 70px, 75% 0, 100% 70px, 100% 100%, 0% 100%);
+    // clip-path: polygon(0px 70px, 75% 0, 100% 70px, 100% 100%, 0% 100%);
+    padding-block: 30px;
 
     .images-text {
       width: 100%;
@@ -279,9 +281,9 @@
 @mixin tablet-styles {
   @media (min-width: 426px) and (max-width: 768px) {
     .past-events-container {
-      margin-top: -12vw;
-      padding-top: 16vw;
-      padding-bottom: 16vw;
+      // margin-top: -12vw;
+      // padding-top: 16vw;
+      // padding-bottom: 16vw;
     }
 
     .images-text {
@@ -306,9 +308,10 @@
 @mixin laptop-m-styles {
   @media (min-width: 769px) and (max-width: 1024px) {
     .past-events-container {
-      margin-top: -7vw;
-      padding-top: 12vw;
-      padding-bottom: 15vw;
+      // margin-top: -7vw;
+      // padding-top: 12vw;
+      // padding-bottom: 15vw;
+      // padding-block: 80px;
     }
 
     .images-text {
