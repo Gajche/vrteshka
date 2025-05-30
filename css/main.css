@@ -229,7 +229,7 @@ body {
   align-items: center;
   gap: 0;
   margin-top: -5vw;
-  padding-top: 5.5vw;
+  padding-top: 6vw;
   padding-bottom: 7vw;
 }
 .introduction .wrap {
@@ -685,7 +685,7 @@ body {
           clip-path: polygon(0px 70px, 88% 0, 100% 20px, 100% 100%, 0% 100%);
   margin-top: -6vw;
   padding-top: 8vw;
-  padding-bottom: 9vw;
+  padding-bottom: 10vw;
 }
 
 .images-text {
@@ -1872,7 +1872,7 @@ body {
           clip-path: polygon(0 9%, 100% 0, 100% 100%, 0% 100%);
   margin-top: -8vw;
   padding-top: 6vw;
-  padding-bottom: 1vw;
+  padding-bottom: 0;
 }
 .collaborators-section .collaborators-container {
   padding: 2.5rem;
