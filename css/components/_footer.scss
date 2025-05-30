@@ -2,12 +2,12 @@
 @use "../abstracts/mixins" as mixin;
 @use "sass:math";
 
-.sponsors-footer {
+.vrteshka-footer {
   background-color: var.$section_6_bg;
   padding: var.$gutter-base;
   max-width: 100%;
 
-  .sponsors-container {
+  .footer-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -16,7 +16,7 @@
     margin: 0 auto;
   }
 
-  .sponsor-logo {
+  .footer-logo {
     flex: 1 1 7.5rem;
     display: flex;
     align-items: center;
@@ -30,7 +30,7 @@
     }
 
     &:nth-child(1) img {
-      height: 70px;
+      height: 4.375rem;
     }
 
     &:nth-child(n + 2) img {
@@ -40,30 +40,30 @@
 }
 
 @media (max-width: 1024px) {
-  .sponsors-footer {
+  .vrteshka-footer {
     padding: var.$gutter-base 0;
 
-    .sponsors-container {
+    .footer-container {
       max-width: 100%;
     }
   }
 }
 
 @media (max-width: 1023px) {
-  .sponsors-footer {
+  .vrteshka-footer {
     padding: var.$gutter-base 0;
 
-    .sponsors-container {
+    .footer-container {
       max-width: 100%;
     }
   }
 }
 
 @media (max-width: 767px) {
-  .sponsors-footer {
+  .vrteshka-footer {
     padding: math.div(var.$gutter-base, 3) 0;
 
-    .sponsors-container {
+    .footer-container {
       max-width: 100%;
     }
   }
