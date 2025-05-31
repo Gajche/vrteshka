@@ -177,7 +177,7 @@
 // Mobile max 425px
 @include mixin.mobile-l-styles {
   .hero {
-    min-height: 100vh;
+    min-height: 100%;
     padding-block: 7.5rem;
 
     &__overlay {

@@ -10,7 +10,7 @@
 4. Javascript for parallax effect (section 3 - for whom), did not succeed to make it work for grabber swipe.
 5. Recreated Google form using html,css and bootstrap.
    Added HTML and Javascript validation to the form.html.
-   Linked it only to the first section , left the original Google Form to section 5 - what to expect.
+   Linked it only to the first section , original Google Form used at section 5 - "what to expect".
 
 - Page optimized for mobile and desktop resolutions:
 
@@ -27,5 +27,3 @@
 
 - hosted/deployed to netlify for mobile testing purposes
 - https://vrteshka.netlify.app/
-
-- When I open https://vrteshka.netlify.app/ in Chrome on PC , footer not appearing. Edge and Firefox works fine.

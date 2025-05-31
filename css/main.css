@@ -193,7 +193,7 @@ body {
 }
 @media (max-width: 767px) {
   .hero {
-    min-height: 100vh;
+    min-height: 100%;
     padding-block: 7.5rem;
   }
   .hero__overlay {
@@ -459,7 +459,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 4.375rem);
   color: #ffffff;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/Section_3_Background.jpg");
   background-size: cover;
