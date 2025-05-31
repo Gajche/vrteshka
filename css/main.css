@@ -566,6 +566,11 @@ body {
   background-color: #ffffff;
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+@media (max-width: 1440px) {
+  .artists {
+    padding-block: 7.5rem;
+  }
+}
 @media (max-width: 1024px) {
   .artists {
     background-size: 150%;

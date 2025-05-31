@@ -208,6 +208,11 @@
     }
   }
 
+  // Laptop 1440px
+  @include mixin.laptop-l-styles {
+    padding-block: 7.5rem;
+  }
+
   // Laptop 1024px
   @include mixin.laptop-m-styles {
     background-size: 150%;
