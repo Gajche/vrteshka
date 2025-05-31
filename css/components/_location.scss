@@ -218,20 +218,20 @@
   .location-section {
     min-width: 100%;
     background-size: 300%;
-    background-position: 49.5% 55%;
+    background-position: 49.5% 50%;
     background-repeat: no-repeat;
     padding-inline: math.div(var.$gutter-base, 1);
-    padding-top: 1.5rem;
-    padding-bottom: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 4.5rem;
 
     .location__container {
       width: 100%;
-      height: 100vh;
+      height: 100%;
 
       .location-left,
       .location-right {
         flex: 0 0 100%;
-        padding: 0;
+        padding: 10px;
       }
 
       .location-left {
@@ -242,7 +242,7 @@
 
         p {
           font-size: var.$font-size-small;
-          width: 85%;
+          width: 88.5%;
           margin-bottom: math.div(var.$gutter-base, 1.5);
         }
       }
@@ -252,6 +252,10 @@
           max-width: 18.75rem;
           height: auto;
         }
+
+        // .map-button {
+        //   margin-bottom: 24px;
+        // }
       }
     }
   }

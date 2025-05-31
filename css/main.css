@@ -1623,20 +1623,20 @@ body {
   .location-section {
     min-width: 100%;
     background-size: 300%;
-    background-position: 49.5% 55%;
+    background-position: 49.5% 50%;
     background-repeat: no-repeat;
     padding-inline: 1.875rem;
-    padding-top: 1.5rem;
-    padding-bottom: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 4.5rem;
   }
   .location-section .location__container {
     width: 100%;
-    height: 100vh;
+    height: 100%;
   }
   .location-section .location__container .location-left,
   .location-section .location__container .location-right {
     flex: 0 0 100%;
-    padding: 0;
+    padding: 10px;
   }
   .location-section .location__container .location-left h2 {
     font-size: 1.375rem;
@@ -1644,7 +1644,7 @@ body {
   }
   .location-section .location__container .location-left p {
     font-size: 0.875rem;
-    width: 85%;
+    width: 88.5%;
     margin-bottom: 1.25rem;
   }
   .location-section .location__container .location-right .map-image {
