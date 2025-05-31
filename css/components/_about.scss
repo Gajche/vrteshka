@@ -15,7 +15,7 @@
   // margin-top: -5vw; // Overlaps with previous section
   // padding-top: 6vw;
   // padding-bottom: 7vw;
-  padding: 0.625rem;
+  padding-block: 35px;
   // z-index: 11;
   // margin-inline: auto;
 
@@ -55,7 +55,7 @@
   // Individual content items (left and right columns)
   &__item {
     flex-basis: 33.333%; // REPEATED: Same as &__image
-    // padding: math.div(var.$gutter-base, 0.5) math.div(var.$gutter-base, 2);
+    padding: math.div(var.$gutter-base, 0.5) math.div(var.$gutter-base, 2);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -91,7 +91,7 @@
     font-family: var.$font-family-normal;
     font-size: var.$heading-size-big2x;
     font-weight: var.$font-weight-light;
-    margin-bottom: math.div(var.$gutter-base, 2);
+    margin-bottom: math.div(var.$gutter-base, 1.5);
   }
 
   // REDUNDANT SELECTOR: This duplicates the &:last-child logic above
