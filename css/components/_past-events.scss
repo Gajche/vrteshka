@@ -11,11 +11,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  // clip-path: polygon(0px 70px, 88% 0, 100% 20px, 100% 100%, 0% 100%);
-  // margin-top: -6vw;
-  // padding-top: 8vw;
-  // padding-bottom: 10vw;
-  padding-block: 40px;
+
+  padding-block: 2.5rem;
 }
 
 .images-text {
@@ -118,29 +115,29 @@
 .bottom-row {
   > *:nth-child(1) {
     .image-holder:nth-child(1) {
-      height: 250px;
+      height: 15.625rem;
     }
     .image-holder:nth-child(2) {
-      height: 280px;
+      height: 17.5rem;
     }
   }
 
   > *:nth-child(2) {
     .image-holder:nth-child(1) {
-      height: 400px;
+      height: 25rem;
 
       img {
         object-position: center left;
       }
     }
     .image-holder:nth-child(2) {
-      height: 130px;
+      height: 8.125rem;
     }
   }
 
   > *:nth-child(3) {
     .image-holder {
-      height: 248px;
+      height: 15.5rem;
     }
   }
 }
@@ -152,12 +149,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // margin-top: -19vw;
-    // padding-top: 30vw;
-    // padding-bottom: 30vw;
     padding-inline: math.div(var.$gutter-base, 3);
-    // clip-path: polygon(0px 70px, 75% 0, 100% 70px, 100% 100%, 0% 100%);
-    padding-block: 30px;
+    padding-block: 1.875rem;
 
     .images-text {
       width: 100%;
@@ -178,7 +171,7 @@
         flex-basis: 100%;
         .image-holder {
           width: auto;
-          height: 202px;
+          height: 12.625rem;
           object-fit: cover;
           object-position: center center;
         }
@@ -187,12 +180,12 @@
       > *:nth-child(2) {
         flex-basis: 50%;
         .image-holder:nth-child(1) {
-          height: 250px;
+          height: 15.625rem;
           object-fit: cover;
           object-position: center center;
         }
         .image-holder:nth-child(2) {
-          height: 130px;
+          height: 8.125rem;
           object-fit: cover;
           object-position: center center;
         }
@@ -201,12 +194,12 @@
       > *:nth-child(3) {
         flex-basis: 50%;
         .image-holder:nth-child(1) {
-          height: 180px;
+          height: 11.25rem;
           object-fit: cover;
           object-position: center center;
         }
         .image-holder:nth-child(2) {
-          height: 200px;
+          height: 12.5rem;
           object-fit: cover;
           object-position: center center;
         }
@@ -217,12 +210,12 @@
       > *:nth-child(1) {
         flex-basis: 50%;
         .image-holder:nth-child(1) {
-          height: 180px;
+          height: 11.25rem;
           object-fit: cover;
           object-position: center center;
         }
         .image-holder:nth-child(2) {
-          height: 200px;
+          height: 12.5rem;
           object-fit: cover;
           object-position: center center;
         }
@@ -232,12 +225,12 @@
         flex-basis: 50%;
 
         .image-holder:nth-child(1) {
-          height: 100px;
+          height: 6.25rem;
           object-fit: cover;
           object-position: center center;
         }
         .image-holder:nth-child(2) {
-          height: 280px;
+          height: 17.5rem;
           object-fit: cover;
           object-position: center center;
         }
@@ -247,7 +240,7 @@
         flex-basis: 100%;
         .image-holder {
           width: auto;
-          height: 183px;
+          height: 11.438rem;
           object-fit: cover;
           object-position: center center;
         }
@@ -280,12 +273,6 @@
 // Tablet styles for 768px
 @mixin tablet-styles {
   @media (min-width: 426px) and (max-width: 768px) {
-    .past-events-container {
-      // margin-top: -12vw;
-      // padding-top: 16vw;
-      // padding-bottom: 16vw;
-    }
-
     .images-text {
       width: 100%;
     }
@@ -307,13 +294,6 @@
 
 @mixin laptop-m-styles {
   @media (min-width: 769px) and (max-width: 1024px) {
-    .past-events-container {
-      // margin-top: -7vw;
-      // padding-top: 12vw;
-      // padding-bottom: 15vw;
-      // padding-block: 80px;
-    }
-
     .images-text {
       width: 100%;
     }

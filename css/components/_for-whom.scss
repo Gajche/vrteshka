@@ -45,7 +45,7 @@
   position: relative;
   display: block;
   width: 100%;
-  height: 83px;
+  height: 5.25rem;
 }
 
 .artists-shape-top .artists-shape-fill {
@@ -67,7 +67,7 @@
   position: relative;
   display: block;
   width: calc(100% + 0px);
-  height: 87px;
+  height: 5.5rem;
 }
 
 .artists-shape-bottom .artists-bottom-shape-fill {
@@ -88,15 +88,9 @@
     url("../img/Section_3_Background.jpg");
   background-size: cover;
   background-position: 50% 75%;
-  // clip-path: polygon(0 0%, 100% 11%, 100% 100%, 0 100%);
   transition: background-position 0.4s ease-in-out;
   will-change: background-position;
   backface-visibility: hidden;
-
-  // margin-top: -7vw;
-  // padding-top: 9vw;
-  // padding-bottom: 8vw;
-  // padding-block: 120px;
 
   &__content-wrapper {
     width: 100%;
@@ -216,12 +210,9 @@
 
   // Laptop 1024px
   @include mixin.laptop-m-styles {
-    // margin-top: -14vw;
-    // padding-top: 12vw;
-    // padding-bottom: 12vw;
     background-size: 150%;
     background-position: 45% 72%;
-    padding-block: 120px;
+    padding-block: 7.5rem;
 
     .border-top {
       width: 50%;
@@ -245,9 +236,6 @@
   // Tablet 768px
   @include mixin.tablet-styles {
     min-height: 100vh;
-    // margin-top: -14vw;
-    // padding-top: 14vw;
-    // padding-bottom: 14vw;
     background-size: 200%;
     background-position: 48% 71%;
     background-repeat: no-repeat;
@@ -296,23 +284,17 @@
   // Mobile 425px
   @include mixin.mobile-l-styles {
     .artists-shape-top svg {
-      height: 65px;
+      height: 4rem;
     }
     .artists-shape-bottom svg {
-      height: 70px;
+      height: 4.375rem;
     }
 
     min-height: 100vh;
-    // margin-top: -28vw;
-    // padding-top: 30px;
-    // padding-bottom: 30vw;
     background-size: 365%;
     background-position: 28% 80%;
     background-repeat: no-repeat;
-
-    // clip-path: polygon(0 0%, 100% 7%, 100% 100%, 0 100%);
-
-    padding-block: 110px;
+    padding-block: 6.875rem;
 
     .border-top {
       width: 80%;
@@ -323,7 +305,7 @@
       font-weight: var.$font-weight-normal;
       margin-bottom: math.div(var.$gutter-base, 1);
       line-height: var.$line-height-base;
-      max-width: 87.5%;
+      max-width: auto;
       margin-inline: auto;
     }
 

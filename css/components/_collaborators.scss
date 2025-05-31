@@ -50,7 +50,7 @@
   position: relative;
   display: block;
   width: 100%;
-  height: 85px;
+  height: 5.25rem;
   transform: scale(-1, 1);
 }
 
@@ -68,29 +68,16 @@
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  // height: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  // flex-shrink: 1;
-  // flex-grow: 0;
 
-  // clip-path: polygon(0 9%, 100% 0, 100% 100%, 0% 100%);
-
-  // margin-top: -8vw;
-  padding-top: 120px;
-  padding-bottom: 60px;
-  // padding-block: 80px;
+  padding-top: 7.5rem;
+  padding-bottom: 3.75rem;
 
   .collaborators-container {
     // padding: math.div(var.$gutter-base, 0.75);
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-
-    // height: 100%;
-    // width: 100%;
 
     .collaborators-content-wrapper {
       display: flex;
@@ -168,7 +155,6 @@
           display: flex;
           flex-direction: column;
           align-items: flex-end;
-          // margin-bottom: math.div(var.$gutter-base, 2);
 
           p {
             font-family: var.$font-family-base;
@@ -217,11 +203,6 @@
 
 /* Tablet 768px */
 @include mixin.tablet-styles {
-  .collaborators-section {
-    // margin-top: -11vw;
-    // padding-top: 12vw;
-    // padding-bottom: 0;
-  }
   .collaborators-section
     .collaborators-container
     .collaborators-content-wrapper
@@ -260,11 +241,11 @@
 /* Mobile 425px */
 @media (max-width: 767px) {
   .collaborators-shape-top svg {
-    height: 52px;
+    height: 3.25rem;
   }
 
   .collaborators-section {
-    padding-top: 100px;
+    padding-top: 6.25rem;
 
     .collaborators-container {
       padding-block: 0;

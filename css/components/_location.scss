@@ -16,7 +16,7 @@
   position: relative;
   display: block;
   width: 100%;
-  height: 93px;
+  height: 5.875rem;
   transform: scale(-1, 1);
 }
 
@@ -39,7 +39,7 @@
   position: relative;
   display: block;
   width: calc(100% + 0px);
-  height: 60px;
+  height: 3.75rem;
 }
 
 .meet-shape-bottom .meet-bottom-shape-fill {
@@ -58,11 +58,7 @@
   background-position: 70% 50%;
   display: flex;
   justify-content: center;
-  // clip-path: polygon(50% 12%, 100% 0, 100% 100%, 0 100%, 0 0);
-  // margin-top: -8vw;
-  // padding-top: 6vw;
-  // padding-bottom: 4vw;
-  padding-block: 80px;
+  padding-block: 5rem;
 
   .location__container {
     max-width: 100%;
@@ -71,12 +67,12 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding-top: 40px;
+    padding-top: 2.5rem;
 
     .location-left,
     .location-right {
       flex: 0 0 50%;
-      padding: 20px;
+      padding: 1.25rem;
     }
 
     .location-left {
@@ -115,7 +111,7 @@
         border: 0.125rem solid var.$color-white;
         border-radius: 0.3rem;
         cursor: pointer;
-        margin-bottom: 20px;
+        // margin-bottom: 1.25rem;
         width: fit-content;
       }
     }
@@ -126,8 +122,8 @@
 
       .map-image {
         width: 100%;
-        max-width: 400px;
-        height: 400px;
+        max-width: 25rem;
+        height: auto;
         object-fit: cover;
         cursor: pointer;
         display: block;
@@ -165,7 +161,7 @@
       padding-right: 2.5rem;
       .map-image {
         width: 100%;
-        max-width: 330px;
+        max-width: 20.625rem;
         height: auto;
       }
     }
@@ -202,7 +198,7 @@
       padding-right: 2.5rem;
       .map-image {
         width: 100%;
-        max-width: 330px;
+        max-width: 20.625rem;
         height: auto;
       }
     }
@@ -212,21 +208,21 @@
 // Mobile 425px
 @include mixin.mobile-l-styles {
   .location-shape-top svg {
-    height: 59px;
+    height: 3.75rem;
   }
 
   .meet-shape-bottom svg {
-    height: 38px;
+    height: 2.375rem;
   }
 
   .location-section {
     min-width: 100%;
     background-size: 300%;
-    background-position: 49.5% 48%;
+    background-position: 49.5% 55%;
     background-repeat: no-repeat;
     padding-inline: math.div(var.$gutter-base, 1);
-    padding-top: 10px;
-    padding-bottom: 30px;
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
 
     .location__container {
       width: 100%;
@@ -239,7 +235,6 @@
       }
 
       .location-left {
-        padding-bottom: 0;
         h2 {
           font-size: var.$heading-size-tiny2x;
           width: 80%;
@@ -252,8 +247,6 @@
         }
       }
       .location-right {
-        margin-top: -5rem;
-        padding-top: 0;
         .map-image {
           width: 100%;
           max-width: 18.75rem;

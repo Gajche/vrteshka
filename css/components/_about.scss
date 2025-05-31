@@ -2,80 +2,47 @@
 @use "../abstracts/mixins" as mixin;
 @use "sass:math";
 
-// Introduction section - Three-column layout with center image
+// Introduction section
 .introduction {
   position: relative;
   background-color: var.$color-white;
   width: 100%;
-  height: 100%; // QUESTIONABLE: May not be needed if content determines height
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0; // REDUNDANT: Default gap is 0
-  // margin-top: -5vw; // Overlaps with previous section
-  // padding-top: 6vw;
-  // padding-bottom: 7vw;
-  padding-block: 35px;
-  // z-index: 11;
-  // margin-inline: auto;
+  gap: 0;
+  padding-block: 2.25rem;
 
-  // .about-shape-bottom {
-  //   position: absolute;
-  //   bottom: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   overflow: hidden;
-  //   line-height: 0;
-  //   transform: rotate(180deg);
-  // }
-
-  // .about-shape-bottom svg {
-  //   position: relative;
-  //   display: block;
-  //   width: calc(100% + 1.3px);
-  //   height: 55px;
-  // }
-
-  // .about-shape-bottom .about-shape-fill {
-  //   fill: #ffffff;
-  // }
-
-  // Main content wrapper - constrains width and creates flex layout
   .wrap {
     width: 72.5%;
-    // max-height: auto; // QUESTIONABLE: May not be needed
-    // padding: math.div(var.$gutter-base, 1) 0; // math.div(x, 1) = x, could be simplified
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 0; // REDUNDANT: Default gap is 0
+    gap: 0;
   }
 
-  // Individual content items (left and right columns)
   &__item {
-    flex-basis: 33.333%; // REPEATED: Same as &__image
+    flex-basis: 33.333%;
     padding: math.div(var.$gutter-base, 0.5) math.div(var.$gutter-base, 2);
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    // First item alignment
     &:first-child {
       text-align: left;
       align-self: center;
     }
 
-    // Last item alignment
     &:last-child {
       text-align: end;
       align-self: center;
     }
   }
 
-  // Center image container
   &__image {
-    flex-basis: 33.333%; // REPEATED: Same as &__item
+    flex-basis: 33.333%;
     padding: math.div(var.$gutter-base, 2);
     display: flex;
     justify-content: center;
@@ -86,7 +53,6 @@
     }
   }
 
-  // Main headings
   &__title {
     font-family: var.$font-family-normal;
     font-size: var.$heading-size-big2x;
@@ -94,15 +60,13 @@
     margin-bottom: math.div(var.$gutter-base, 1.5);
   }
 
-  // REDUNDANT SELECTOR: This duplicates the &:last-child logic above
   .introduction__item--last {
     .introduction__title,
     .introduction__text {
-      text-align: end; // Same effect as &:last-child above
+      text-align: end;
     }
   }
 
-  // Body text content
   &__text {
     font-family: var.$font-family-base;
     font-size: var.$font-size-base;
@@ -110,7 +74,6 @@
     margin-bottom: math.div(var.$gutter-base, 4);
   }
 
-  // Social media link
   &__social {
     margin-top: var.$gutter-base;
     align-self: flex-end;
@@ -134,27 +97,20 @@
     }
   }
 
-  // RESPONSIVE BREAKPOINTS
-  // Many properties are repeated across breakpoints and could be consolidated
-
   // Mobile 425px - Stack vertically, center everything
   @include mixin.mobile-l-styles {
     min-height: 100vh;
-    // margin-top: -25vw !important; // !important suggests specificity issues
-    // padding-top: 33vw !important;
-    // padding-bottom: 36vw !important;
 
     .wrap {
       flex-direction: column;
       align-items: center;
-      // gap: 0px !important; // REDUNDANT: Gap is already 0 by default
       padding: 0.625rem;
     }
 
     .introduction__item {
       flex-basis: 100%;
-      padding: 0px; // Could be simplified to 0
-      display: block; // OVERRIDE: Changes from flex to block
+      padding: 0px;
+
       text-align: center;
 
       &:first-child,
@@ -168,19 +124,19 @@
     .introduction__image {
       flex-basis: 100%;
       padding: 0.625rem;
-      display: flex; // REPEATED: Same as desktop
-      justify-content: center; // REPEATED: Same as desktop
-      align-items: center; // REPEATED: Same as desktop
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       img {
-        height: 15rem; // Different approach: height instead of max-width
+        height: 15rem;
         margin-top: 0;
       }
     }
 
     .introduction__title {
       font-size: var.$heading-size-small;
-      margin-bottom: math.div(var.$gutter-base, 2); // REPEATED: Same as desktop
+      margin-bottom: math.div(var.$gutter-base, 2);
       text-align: center;
     }
 
@@ -199,24 +155,15 @@
 
   // Tablet 768px - Keep three columns but adjust spacing
   @include mixin.tablet-styles {
-    // margin-top: -7vw;
-    // padding-top: 7vw;
-    // padding-bottom: 7vw;
-
     .wrap {
       width: 100%;
-      // flex-wrap: nowrap; // REDUNDANT: Default flex-wrap is nowrap
       gap: 2.188rem;
       align-items: center;
     }
 
     &__image {
-      // flex-basis: 33.333%; // REPEATED: Same as desktop
       padding: 0;
-      height: 100%; // QUESTIONABLE: May not be needed
-      // display: flex; // REPEATED: Same as desktop & mobile
-      // justify-content: center; // REPEATED: Same as desktop & mobile
-      // align-items: center; // REPEATED: Same as desktop & mobile
+      height: 100%;
 
       img {
         max-width: 7.5rem;
@@ -226,31 +173,26 @@
     }
 
     &__item {
-      // flex-basis: 33.333%; // REPEATED: Same as desktop
       text-align: left;
       padding: 2.5rem math.div(var.$gutter-base, 2);
     }
 
     &__title {
-      font-size: var.$heading-size-big; // REPEATED: Same as laptop
-      margin-bottom: math.div(var.$gutter-base, 4); // REPEATED: Same as laptop
+      font-size: var.$heading-size-big;
+      margin-bottom: math.div(var.$gutter-base, 4);
     }
   }
 
   // Laptop 1024px - Similar to tablet with different spacing
   @include mixin.laptop-m-styles {
-    // margin-top: -5vw;
-    // padding-top: 5vw;
-    // padding-bottom: 14vw;
-
     .wrap {
       width: 100%;
-      gap: 2.188rem; // REPEATED: Same as tablet
+      gap: 2.188rem;
     }
 
     &__title {
-      font-size: var.$heading-size-big; // REPEATED: Same as tablet
-      margin-bottom: math.div(var.$gutter-base, 4); // REPEATED: Same as tablet
+      font-size: var.$heading-size-big;
+      margin-bottom: math.div(var.$gutter-base, 4);
     }
 
     &__text {
